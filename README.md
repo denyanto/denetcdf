@@ -2,11 +2,13 @@
 
 Ini merupakan paket python untuk simpan variabel 3 dimensi ke dalam format netcdf yang bisa dibaca Grads, R, python, matlab dll.
 
-Instalasi: pip install denetcdf
+Instalasi: 
+```ruby
+pip install denetcdf
+```
 
 ## Contoh 1 variabel:
 
-#####################
 ```ruby
 import denetcdf
 import netCDF4 as nc
@@ -23,11 +25,9 @@ pm_10=[to_np(fh[i]['PM10']) for i in range(len(fl))];pm_10=np.squeeze(np.array(p
 
 denetcdf.create('test.nc', lats, lons, 'Inaaqm Output', '20230905000000', 73, 'Particulate Matter 10 (g/kg)','pm10','g/kg', pm_10[:,0,:,:])
 ```
-######################
 
 ## Contoh multi-variabel:
 
-######################
 ```ruby
 import denetcdf
 import netCDF4 as NC
@@ -62,4 +62,4 @@ data=np.array(data)
 
 denetcdf.create('testm.nc', lats, lons, 'Inaaqm Output', '20230905000000', len(fl), titles,vars,units, data)
 ```
-######################
+
