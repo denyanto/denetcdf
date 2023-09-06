@@ -23,7 +23,7 @@ fh.close()
 fh=[nc.Dataset(i) for i in fl];print(len(fl))
 pm_10=[to_np(fh[i]['PM10']) for i in range(len(fl))];pm_10=np.squeeze(np.array(pm_10))
 
-denetcdf.create('test.nc', lats, lons, 'Inaaqm Output', '20230905000000', 73, 'Particulate Matter 10 (g/kg)','pm10','g/kg', pm_10[:,0,:,:])
+denetcdf('test.nc', lats, lons, 'Inaaqm Output', '20230905000000', 73, 'Particulate Matter 10 (g/kg)','pm10','g/kg', pm_10[:,0,:,:])
 ```
 
 ## Contoh multi-variabel:
@@ -60,6 +60,6 @@ units.append('ppm')
 pm_co=[to_np(fh[i]['co']) for i in range(len(fl))];data.append(np.squeeze(np.array(pm_10))[:,0,:,:])
 data=np.array(data)
 
-denetcdf.create('testm.nc', lats, lons, 'Inaaqm Output', '20230905000000', len(fl), titles,vars,units, data)
+denetcdf('testm.nc', lats, lons, 'Inaaqm Output', '20230905000000', len(fl), titles,vars,units, data)
 ```
 
