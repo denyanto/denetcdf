@@ -1,9 +1,7 @@
-import glob, sys
-sys.path.insert(1, '/home/satreps/.libraries/olah/proj1/denetcdf/src/denetcdf')
-import denetcdf
+import denetcdf, glob
 import netCDF4 as nc
 import numpy as np
-from wrf import getvar, vinterp, to_np, get_basemap, latlon_coords, extract_times, ALL_TIMES
+from wrf import to_np
 
 fl = sorted(glob.glob('/home/satreps/.libraries/test/output/2023090400/wrfout*'))
 
