@@ -7,6 +7,11 @@ Instalasi:
 pip install denetcdf
 ```
 
+Cara Penggunaan:
+```ruby
+denetcdf('fileoutput.nc', lats, lons, 'Judul', 'datetime_initial', panjangdata, 'namavariabel','var','satuan', data)
+```
+
 ## Contoh 1 variabel:
 
 ```ruby
