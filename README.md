@@ -2,6 +2,8 @@
 
 Ini merupakan paket python untuk simpan variabel 3 dimensi ke dalam format netcdf yang bisa dibaca Grads, R, python, matlab dll.
 
+Instalasi: pip install denetcdf
+
 ## Contoh 1 variabel:
 
 #####################
