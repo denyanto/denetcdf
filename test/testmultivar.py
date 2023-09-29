@@ -1,4 +1,5 @@
-import denetcdf, glob
+from denetcdf import denetcdf
+import glob
 import netCDF4 as nc
 import numpy as np
 from wrf import to_np
