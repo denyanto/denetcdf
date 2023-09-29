@@ -9,13 +9,13 @@ pip install denetcdf
 
 Cara Penggunaan:
 ```ruby
-denetcdf('fileoutput.nc', lats, lons, 'Judul', 'datetime_initial', panjangdata, 'namavariabel','var','satuan', data)
+denetcdf.create('fileoutput.nc', lats, lons, 'Judul', 'datetime_initial', panjangdata, 'namavariabel','var','satuan', data)
 ```
 
 ## Contoh 1 variabel:
 
 ```ruby
-import denetcdf
+from denetcdf import denetcdf
 import netCDF4 as nc
 import numpy as np
 from wrf import to_np
@@ -28,13 +28,13 @@ fh.close()
 fh=[nc.Dataset(i) for i in fl];print(len(fl))
 pm_10=[to_np(fh[i]['PM10']) for i in range(len(fl))];pm_10=np.squeeze(np.array(pm_10))
 
-denetcdf('test.nc', lats, lons, 'Inaaqm Output', '20230905000000', 73, 'Particulate Matter 10 (g/kg)','pm10','g/kg', pm_10[:,0,:,:])
+denetcdf.create('test.nc', lats, lons, 'Inaaqm Output', '20230905000000', 73, 'Particulate Matter 10 (g/kg)','pm10','g/kg', pm_10[:,0,:,:])
 ```
 
 ## Contoh multi-variabel:
 
 ```ruby
-import denetcdf
+from denetcdf import denetcdf
 import netCDF4 as NC
 import numpy as np
 from wrf import to_np
@@ -65,6 +65,6 @@ units.append('ppm')
 pm_co=[to_np(fh[i]['co']) for i in range(len(fl))];data.append(np.squeeze(np.array(pm_10))[:,0,:,:])
 data=np.array(data)
 
-denetcdf('testm.nc', lats, lons, 'Inaaqm Output', '20230905000000', len(fl), titles,vars,units, data)
+denetcdf.create('testm.nc', lats, lons, 'Inaaqm Output', '20230905000000', len(fl), titles,vars,units, data)
 ```
 
